@@ -20,6 +20,11 @@ function App() {
   const handleSignup = async (e) => {
     e.preventDefault();
 
+    if (!f_name || !l_name || !signupUsername || !signupPassword) {
+      setSignupMessage("All fields are required.");
+      return;
+    }
+
     setSignupMessage("Creating account...");
 
     try {
@@ -58,6 +63,11 @@ function App() {
   // LOGIN
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    if (!loginUsername || !loginPassword) {
+      setLoginMessage("Username and password are required.");
+      return;
+    }
 
     setLoginMessage("Logging in...");
 
